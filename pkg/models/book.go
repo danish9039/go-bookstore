@@ -1,5 +1,5 @@
 package models
-
+//models are a way to interact witth data base with out using sql query
 import (
 
 	"github.com/jinzhu/gorm"
