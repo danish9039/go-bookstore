@@ -13,7 +13,7 @@ var(
 
 func Connect(){
 
-	dsn := "yourUsername:%409039146148Dani@tcp(127.0.0.1:3306)/yourDatabase?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:%409039146148Dani@tcp(127.0.0.1:3306)/yourDatabase?charset=utf8mb4&parseTime=True&loc=Local"
     d, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 if err!=nil{
 
