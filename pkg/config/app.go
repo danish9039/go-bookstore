@@ -2,9 +2,10 @@ package config
 
 import (
 	
-
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"gorm.io/driver/mysql"
+    "gorm.io/gorm"
+	
+	
 )
 var(
 	db *gorm.DB
@@ -12,8 +13,8 @@ var(
 
 func Connect(){
 
-
-	  d, err :=gorm.Open("mysql","akhil:Axlesharma@12@/simplerest?charset=utf8&parsetime=True&loc=Local")
+	dsn := "yourUsername:%409039146148Dani@tcp(127.0.0.1:3306)/yourDatabase?charset=utf8mb4&parseTime=True&loc=Local"
+    d, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 if err!=nil{
 
 

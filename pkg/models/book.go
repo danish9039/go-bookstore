@@ -1,8 +1,9 @@
 package models
 //models are a way to interact witth data base with out using sql query
 import (
-
-	"github.com/jinzhu/gorm"
+	
+    "gorm.io/gorm"
+	
 
 	"github.com/danish9039/go-bookstore/pkg/config"
 )
@@ -23,16 +24,15 @@ Publication string `json:"publication"`
 func init() {
 	config.Connect()
 	db = config.GetDB()
-	db .AutoMigrate(&Book{})
+	db.AutoMigrate(&Book{})
 }
 
 func (b *Book) CreateBook()*Book {
 
-db.NewRecord(b)
-db.Create(&b)
-return b 
-
-
+	if b.ID == 0 {
+        db.Create(b) // Create a new record
+    }
+    return b
 }
 
 
